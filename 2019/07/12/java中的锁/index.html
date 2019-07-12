@@ -86,12 +86,12 @@ Thread-1读操作完毕</code></pre><p>ReentrantReadWriteLock允许多个读线�
 <p><strong>非公平锁</strong>即无法保证锁的获取是按照请求锁的顺序进行的。这样就可能导致某个或者一些线程永远获取不到锁。</p>
 <p>&emsp;&emsp;在Java中，==synchronized就是非公平锁==，它无法保证等待的线程获取锁的顺序。而对于ReentrantLock和ReentrantReadWriteLock，它==默认情况下是非公平锁==，但是可以设置为公平锁。</p>
 <p>&emsp;&emsp;在ReentrantLock中定义了2个静态内部类，一个是NotFairSync，一个是FairSync，分别用来实现非公平锁和公平锁。</p>
-<p><img src="/2019/07/12/java中的锁/java%E4%B8%AD%E7%9A%84%E9%94%81%5C1562944862015.png" alt="1562944862015"></p>
+<p><img src="/2019/07/12/java中的锁/1562944862015.png" alt="1562944862015"></p>
 <p>&emsp;&emsp;我们可以在创建ReentrantLock对象时，通过以下方式来设置锁的公平性：</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ReentrantLock lock = <span class="keyword">new</span> ReentrantLock(<span class="keyword">true</span>);</span><br></pre></td></tr></table></figure>
 
 <p>&emsp;&emsp;如果参数为true表示为公平锁，为fasle为非公平锁。默认情况下，如果使用无参构造器，则是非公平锁。</p>
-<p><img src="/2019/07/12/java中的锁/java%E4%B8%AD%E7%9A%84%E9%94%81%5C1562944966849.png" alt="1562944966849"><br><img src="/2019/07/12/java中的锁/java%E4%B8%AD%E7%9A%84%E9%94%81%5C1562944996384.png" alt="1562944996384"></p>
+<p><img src="/2019/07/12/java中的锁/1562944966849.png" alt="1562944966849"><br><img src="/2019/07/12/java中的锁/1562944996384.png" alt="1562944996384"></p>
 <p>另外在ReentrantLock类中定义了很多方法，比如：</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">isFair()        <span class="comment">//判断锁是否是公平锁</span></span><br><span class="line">isLocked()    <span class="comment">//判断锁是否被任何线程获取了</span></span><br><span class="line">isHeldByCurrentThread()   <span class="comment">//判断锁是否被当前线程获取了</span></span><br><span class="line">hasQueuedThreads()   <span class="comment">//判断是否有线程在等待该锁</span></span><br></pre></td></tr></table></figure>
 
