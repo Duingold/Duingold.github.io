@@ -20,7 +20,11 @@
       
         <tags>
             
-            <tag> 原子性.有序性.可见性 </tag>
+            <tag> 原子性 </tag>
+            
+            <tag> 有序性 </tag>
+            
+            <tag> 可见性 </tag>
             
         </tags>
       
