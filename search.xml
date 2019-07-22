@@ -13,10 +13,22 @@
       
       <categories>
           
+          <category> 后端框架 </category>
+          
           <category> springboot </category>
           
       </categories>
       
+      
+        <tags>
+            
+            <tag> springboot </tag>
+            
+            <tag> 全局异常处理 </tag>
+            
+            <tag> 参数校验 </tag>
+            
+        </tags>
       
     </entry>
     
